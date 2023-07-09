@@ -57,7 +57,29 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
         return
     if chat_id not in wrong:
         wrong[chat_id] = {}
-    wrong[chat_id][CallbackQuery.message.message_id] = False
+    wrong[chat_id][CallbackQuery.message.message_id] = True
+
+
+downvote = {}
+downvoters = {}
+
+@app.on_callback_query(filters.regex("cb_about") & ~BANNED_USERS)
+@languageCB
+async def stat_ab(client, CallbackQuery, _):
+    chats = len(await get_served_chats())
+    users = len(await get_served_users())
+    UP, CPU, RAM, DISK = await bot_sys_stats()
+    process = psutil.Process(os.getpid())
+    await CallbackQuery.answer(f"""
+➻ {MUSIC_BOT_NAME} sᴛᴀᴛs :
+
+» ʙᴏᴛ : {round(process.memory_info()[0] / 1024 ** 2)} ᴍʙ
+» ᴄᴩᴜ : {CPU}
+» ʀᴀᴍ : {RAM}
+» ᴅɪsᴋ : {DISK}
+» ᴜsᴇʀs : {users}
+» ᴄʜᴀᴛs : {chats}
+» ᴜᴩᴛɪᴍᴇ : {UP}""", show_alert=True)
 
 
 @app.on_callback_query(filters.regex("MainMarkup") & ~BANNED_USERS)
