@@ -15,7 +15,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 LOGGER_ID = int(getenv("LOGGER_ID"))
 
-BOT_NAME = getenv("BOT_NAME", "ғᴀʟʟᴇɴ ダ ᴍᴜsɪᴄ")
+BOT_NAME = getenv("BOT_NAME", "˹ᴍɪss ✗ ᴘʀɪʏᴧ˼🥀")
 OWNER_ID = list(
     map(int, getenv("OWNER_ID", "1356469075").split())
 )
@@ -25,7 +25,7 @@ SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/DevilsHeavenMF")
 
 DURATION_LIMIT_MIN = int(
-    getenv("DURATION_LIMIT", "120")
+    getenv("DURATION_LIMIT", "9999999")
 )
 SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
@@ -95,11 +95,11 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/56d1760224589ee370186.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/5b911ed84bd7503a073eb.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://telegra.ph/file/56d1760224589ee370186.jpg",
+    "https://te.legra.ph/file/7bcfac7da34ebdfba0d87.jpg",
 )
 
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
